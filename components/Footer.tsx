@@ -17,7 +17,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <span className="logo-mark">{site.mark}</span> PERMATA BANGUN INDO
           </div>
         </Reveal>
-        <SplitHeading lines={f.wordmarkLines} className="display footer-wordmark" inView accentLastLine />
+        <SplitHeading lines={f.wordmarkLines} className="display footer-wordmark" as="h2" inView accentLastLine />
       </div>
 
       <div className="container footer-grid">

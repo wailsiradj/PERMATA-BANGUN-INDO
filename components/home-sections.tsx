@@ -44,15 +44,17 @@ export function Hero({ locale }: { locale: Locale }) {
           {h.eyebrow}
         </motion.div>
 
-        <SplitHeading lines={h.titleLines} className="display" as="h1" />
+        <SplitHeading
+          lines={[...h.titleLines, h.titleAccent]}
+          className="display"
+          as="h1"
+          accentLastLine
+        />
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="display" style={{ fontSize: 'inherit', lineHeight: 'inherit' }}>
-            <span className="accent">{h.titleAccent}</span>
-          </h1>
           <p className="hero-copy">{h.copy}</p>
           <div className="hero-actions">
             <Link className="btn" href={`/${locale}/proyek`}>
