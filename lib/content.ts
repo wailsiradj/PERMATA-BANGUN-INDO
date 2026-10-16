@@ -10,6 +10,32 @@ export const site = {
   },
 };
 
+export const companyRegistry = {
+  sourceUrl: 'https://companyhouse.id/permata-bangun-indo',
+  id: {
+    eyebrow: 'Data registrasi publik',
+    title: 'Identitas perusahaan yang tersedia untuk publik.',
+    note: 'Informasi berikut berasal dari catatan registrasi publik pihak ketiga yang menyatakan bersumber dari Direktorat Jenderal Administrasi Hukum Umum. Verifikasi langsung dengan dokumen perusahaan tetap disarankan sebelum publikasi final.',
+    fields: [
+      ['Bentuk badan usaha', 'Perseroan Terbatas (PT)'],
+      ['Nomor usaha', '979426'],
+      ['Alamat terdaftar', 'Permata Hijau Permai Blok I/16, Indonesia'],
+    ],
+    sourceLabel: 'Lihat sumber registrasi',
+  },
+  en: {
+    eyebrow: 'Public registry data',
+    title: 'Publicly available company identity.',
+    note: 'The following information comes from a third-party public registry record that states it is sourced from Indonesia’s Directorate General of Legal Administration. Direct verification against company documents is still recommended before final publication.',
+    fields: [
+      ['Legal entity', 'Limited Liability Company (PT)'],
+      ['Business number', '979426'],
+      ['Registered address', 'Permata Hijau Permai Blok I/16, Indonesia'],
+    ],
+    sourceLabel: 'View registry source',
+  },
+} as const;
+
 // NOTE: All photography below is placeholder (Unsplash) — replace with client assets before launch.
 export const img = {
   hero: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=86',
@@ -71,7 +97,7 @@ export const ui = {
 export const hero = {
   id: {
     eyebrow: 'PT Permata Bangun Indo · Indonesia · 2010 — sekarang',
-    titleLines: ['Membangun', 'Kepercayaan.'],
+    titleLines: ['Membangun Kepercayaan.'],
     titleAccent: 'Mewujudkan Masa Depan.',
     copy: 'Konstruksi, sipil, serta mekanikal dan elektrikal untuk sektor publik dan swasta—direncanakan dengan cermat, dieksekusi dengan disiplin di lapangan.',
     ctaPrimary: 'Jelajahi proyek',
@@ -79,7 +105,7 @@ export const hero = {
   },
   en: {
     eyebrow: 'PT Permata Bangun Indo · Indonesia · 2010 — present',
-    titleLines: ['Building', 'Trust.'],
+    titleLines: ['Building Trust.'],
     titleAccent: 'Shaping the Future.',
     copy: 'Construction, civil, and mechanical-electrical work for public and private sectors—planned with care, executed with discipline on site.',
     ctaPrimary: 'Explore projects',

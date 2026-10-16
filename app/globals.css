@@ -828,3 +828,4 @@ h1, h2, h3, h4, p { margin: 0; }
   .scroll-cue::after { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+.registry-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}.registry-title{font-size:clamp(48px,5vw,78px)}.registry-panel{border-top:1px solid var(--line);padding-top:24px}.registry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.registry-field{display:flex;flex-direction:column;gap:10px}.registry-field span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}.registry-field strong{font-size:15px;line-height:1.45;font-weight:600}.registry-note{max-width:680px;margin:34px 0 24px;color:var(--steel);font-size:12px;line-height:1.7}.registry-panel .text-link{font-size:11px}@media(max-width:800px){.registry-layout{display:block}.registry-panel{margin-top:35px}.registry-grid{grid-template-columns:1fr;gap:24px}}

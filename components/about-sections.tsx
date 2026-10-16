@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { about, img, process, stats, ui, vision, type Locale } from '../lib/content';
+import { about, companyRegistry, img, process, stats, ui, vision, type Locale } from '../lib/content';
 import { Counter, Reveal, SplitHeading } from './ui';
 import { ValuesGrid } from './home-sections';
 
@@ -51,6 +51,36 @@ export function Story({ locale }: { locale: Locale }) {
             </div>
           </Reveal>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function RegistryProfile({ locale }: { locale: Locale }) {
+  const r = companyRegistry[locale];
+  return (
+    <section className="section section-concrete">
+      <div className="container registry-layout">
+        <Reveal>
+          <div className="eyebrow">{r.eyebrow}</div>
+          <h2 className="display section-title registry-title">{r.title}</h2>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="registry-panel">
+            <div className="registry-grid">
+              {r.fields.map(([label, value]) => (
+                <div className="registry-field" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+            <p className="registry-note">{r.note}</p>
+            <a className="text-link" href={companyRegistry.sourceUrl} target="_blank" rel="noreferrer">
+              {r.sourceLabel} <span>↗</span>
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

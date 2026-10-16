@@ -3,6 +3,7 @@ import {
   AboutHero,
   AboutVision,
   ProcessSection,
+  RegistryProfile,
   StatsBand,
   Story,
   ValuesSection,
@@ -23,6 +24,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     <>
       <AboutHero locale={loc} />
       <Story locale={loc} />
+      <RegistryProfile locale={loc} />
       <AboutVision locale={loc} />
       <ValuesSection locale={loc} />
       <ProcessSection locale={loc} />
