@@ -12,9 +12,12 @@ import { CtaBand } from '../../../components/home-sections';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'en'
-    ? { title: 'About Us', description: 'The story, values, and way of working behind PT Permata Bangun Indo.' }
-    : { title: 'Tentang Kami', description: 'Cerita, nilai, dan cara kerja di balik PT Permata Bangun Indo.' };
+  const en = locale === 'en';
+  return {
+    title: en ? 'About Us' : 'Tentang Kami',
+    description: en ? 'The story, values, and way of working behind PT Permata Bangun Indo.' : 'Cerita, nilai, dan cara kerja di balik PT Permata Bangun Indo.',
+    alternates: { canonical: `/${locale}/tentang-kami`, languages: { id: '/id/tentang-kami', en: '/en/tentang-kami' } },
+  };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

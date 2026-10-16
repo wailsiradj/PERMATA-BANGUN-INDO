@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { ProjectDetail } from '../../../../components/projects-sections';
 import { getProject, projects } from '../../../../lib/content';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://permata-bangun-indo.netlify.app';
+
 type Params = { locale: string; slug: string };
 
 export function generateStaticParams() {
@@ -17,10 +19,18 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const loc = locale === 'en' ? 'en' : 'id';
   const project = getProject(slug);
   if (!project) return { title: 'Not found' };
+  const path = `/${locale}/proyek/${project.slug}`;
   return {
     title: project[loc].title,
     description: project[loc].summary,
-    openGraph: { images: [project.image] },
+    alternates: {
+      canonical: path,
+      languages: {
+        id: `/id/proyek/${project.slug}`,
+        en: `/en/proyek/${project.slug}`,
+      },
+    },
+    openGraph: { url: `${siteUrl}${path}`, images: [project.image] },
   };
 }
 

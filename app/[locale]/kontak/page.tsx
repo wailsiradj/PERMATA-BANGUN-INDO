@@ -4,9 +4,12 @@ import { HomeMarquee } from '../../../components/home-sections';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'en'
-    ? { title: 'Contact', description: 'Discuss your project with the PT Permata Bangun Indo team.' }
-    : { title: 'Kontak', description: 'Diskusikan proyek Anda bersama tim PT Permata Bangun Indo.' };
+  const en = locale === 'en';
+  return {
+    title: en ? 'Contact' : 'Kontak',
+    description: en ? 'Discuss your project with the PT Permata Bangun Indo team.' : 'Diskusikan proyek Anda bersama tim PT Permata Bangun Indo.',
+    alternates: { canonical: `/${locale}/kontak`, languages: { id: '/id/kontak', en: '/en/kontak' } },
+  };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
